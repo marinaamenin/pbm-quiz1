@@ -112,7 +112,7 @@ export default function PBMQuizApp() {
         {currentQuestion.options.map((opt, i) => (
           <li
             key={i}
-            className={\`p-2 border rounded cursor-pointer \${selected === i ? (i === currentQuestion.correct ? 'bg-green-200' : 'bg-red-200') : 'hover:bg-gray-100'}\`}
+            className={`p-2 border rounded cursor-pointer ${selected === i ? (i === currentQuestion.correct ? 'bg-green-200' : 'bg-red-200') : 'hover:bg-gray-100'}`}
             onClick={() => !showAnswer && handleAnswer(i)}
           >
             {String.fromCharCode(65 + i)}) {opt}
