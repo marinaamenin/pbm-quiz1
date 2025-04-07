@@ -78,7 +78,7 @@ export default function PBMQuizApp() {
             <p className="font-semibold mb-2">{q.question}</p>
             <ul className="mb-2">
               {q.options.map((opt, idx) => (
-                <li key={idx} className={\`\${idx === q.correct ? 'text-green-700 font-bold' : idx === q.selected ? 'text-red-700' : ''} mb-1\`}>
+                <li key={idx} className={`${idx === q.correct ? 'text-green-700 font-bold' : idx === q.selected ? 'text-red-700' : ''} mb-1`}>
                   {String.fromCharCode(65 + idx)}) {opt}
                 </li>
               ))}
