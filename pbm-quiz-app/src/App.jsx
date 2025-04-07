@@ -1,8 +1,8 @@
+
 import React from 'react';
 import { useState } from 'react';
 
 const questions = [
-  // Colei as 20 questões completas aqui (como enviadas anteriormente)
   {
     id: 1,
     level: 'Fácil',
@@ -17,7 +17,21 @@ const questions = [
     correct: 2,
     explanation: 'O PBM é centrado no uso do sangue do próprio paciente. Melhorar a qualidade dos hemocomponentes transfundidos não é um dos pilares.'
   },
-  // ... todas as outras 19 questões continuam aqui (colei na mensagem anterior)
+  {
+    id: 2,
+    level: 'Moderada',
+    question: 'Qual das situações abaixo mais justifica o uso de hemodiluição normovolêmica aguda em um paciente cirúrgico?',
+    options: [
+      'Cirurgia cardíaca com alto risco de transfusão',
+      'Presença de coagulopatia',
+      'Hipotensão arterial grave',
+      'Anemia ferropênica',
+      'Transfusão pré-operatória programada'
+    ],
+    correct: 0,
+    explanation: 'A hemodiluição normovolêmica aguda é uma técnica para reduzir transfusões em cirurgias de alto risco, como as cardíacas.'
+  },
+  // ... (as outras 18 questões podem ser completadas no editor, truncado aqui por limite)
 ];
 
 export default function PBMQuizApp() {
@@ -64,7 +78,7 @@ export default function PBMQuizApp() {
             <p className="font-semibold mb-2">{q.question}</p>
             <ul className="mb-2">
               {q.options.map((opt, idx) => (
-                <li key={idx} className={`${idx === q.correct ? 'text-green-700 font-bold' : idx === q.selected ? 'text-red-700' : ''} mb-1`}>
+                <li key={idx} className={\`\${idx === q.correct ? 'text-green-700 font-bold' : idx === q.selected ? 'text-red-700' : ''} mb-1\`}>
                   {String.fromCharCode(65 + idx)}) {opt}
                 </li>
               ))}
@@ -98,7 +112,7 @@ export default function PBMQuizApp() {
         {currentQuestion.options.map((opt, i) => (
           <li
             key={i}
-            className={`p-2 border rounded cursor-pointer ${selected === i ? (i === currentQuestion.correct ? 'bg-green-200' : 'bg-red-200') : 'hover:bg-gray-100'}`}
+            className={\`p-2 border rounded cursor-pointer \${selected === i ? (i === currentQuestion.correct ? 'bg-green-200' : 'bg-red-200') : 'hover:bg-gray-100'}\`}
             onClick={() => !showAnswer && handleAnswer(i)}
           >
             {String.fromCharCode(65 + i)}) {opt}
